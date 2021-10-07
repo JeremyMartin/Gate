@@ -1,18 +1,90 @@
-plugins {
-    id "idea"
-    id "java-library"
+buildscript {
+
+	ext {
+		dependencyManagementPluginVersion = "1.0.11.RELEASE"
+		springBootGradlePluginVersion = "2.5.5"
+	}
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
+	}
+
 }
+
+apply plugin: "idea"
+apply plugin: "java-library"
+apply plugin: "io.spring.dependency-management"
+apply plugin: "org.springframework.boot"
 
 group "com.jmc.commons"
 version "0.0.1"
 
+sourceCompatibility = 16
+
 repositories {
-    mavenCentral()
+	mavenCentral()
+}
+
+ext {
+    commonsCollections4Version = "4.4"
+    commonsLang3Version = "3.12.0"
+	commonsTextVersion = "1.9"
+	guavaVersion = "31.0.1-jre"
 }
 
 dependencies {
+	implementation("com.google.guava:guava:${guavaVersion}")
+    implementation("org.apache.commons:commons-collections4:${commonsCollections4Version}")
+    implementation("org.apache.commons:commons-lang3:${commonsLang3Version}")
+	implementation("org.apache.commons:commons-text:${commonsTextVersion}")
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 test {
-    useJUnitPlatform()
+	jvmArgs = [
+		"--add-opens", "java.base/java.io=ALL-UNNAMED",
+		"--add-opens", "java.base/java.time=ALL-UNNAMED"
+	]
+	useJUnitPlatform()
+}
+
+task("deleteTestConfiguration", type: Delete) {
+	description("Delete test properties and xml files")
+	doFirst {
+		println("\tStart delete test configuration for ${project.name}")
+		println("\tDeleting test configuration for ${project.name}")
+		def dirName = "${projectDir}/src/test/resources" as Object
+		file(dirName).list().each { f ->
+			delete "${dirName}/${f}"
+		}
+		delete(files("${projectDir}/out"))
+		println("\tEnd delete test configuration for ${project.name}")
+	}
+}
+
+task("copyTestConfiguration", dependsOn: deleteTestConfiguration) {
+	description("Copy test properties and xml files")
+	doFirst {
+		println("\tStart copy test configuration for ${project.name}")
+		println("\tCopying test configuration for ${project.name}")
+		copy {
+			from "../configuration/environment/test"
+			into "${project.projectDir}/src/test/resources"
+		}
+		println("\tEnd copy test configuration for ${project.name}")
+	}
+}
+
+clean {
+	dependsOn("deleteTestConfiguration")
+}
+
+compileTestJava {
+	dependsOn("copyTestConfiguration")
 }
