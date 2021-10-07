@@ -1,9 +1,8 @@
 .idea
-.gradle
-gradle
 */gradle
-build
 */build
 */gradlew
 */gradlew.bat
-
+*/src/test/resources
+/configuration/environment/*
+!/configuration/environment/test
