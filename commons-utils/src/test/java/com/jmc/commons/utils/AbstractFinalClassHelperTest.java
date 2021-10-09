@@ -1,4 +1,4 @@
-package com.jmc.commons.utils.helpers;
+package com.jmc.commons.utils;
 
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;

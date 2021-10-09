@@ -1,5 +1,6 @@
 package com.jmc.commons.utils.helpers;
 
+import com.jmc.commons.utils.AbstractFinalClassHelperTest;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
