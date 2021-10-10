@@ -1,4 +1,4 @@
-package com.jmc.commons.utils.helpers;
+package com.jmc.commons.utils.helpers.regexp;
 
 import com.jmc.commons.utils.AbstractFinalClassHelperTest;
 

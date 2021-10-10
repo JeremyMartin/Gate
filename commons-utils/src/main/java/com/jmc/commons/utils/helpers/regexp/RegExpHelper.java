@@ -1,6 +1,8 @@
-package com.jmc.commons.utils.helpers;
+package com.jmc.commons.utils.helpers.regexp;
 
 /**
+ * This class consists of static utility string pattern regular expression
+ *
  * @author Jeremy MARTIN CATANI
  * @created 07/10/2021
  */
