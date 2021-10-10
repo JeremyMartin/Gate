@@ -1,4 +1,4 @@
-package com.jmc.commons.utils.helpers;
+package com.jmc.commons.utils.helpers.password;
 
 import com.jmc.commons.utils.AbstractFinalClassHelperTest;
 import org.apache.commons.lang3.StringUtils;

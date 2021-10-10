@@ -1,10 +1,14 @@
-package com.jmc.commons.utils.helpers;
+package com.jmc.commons.utils.helpers.password;
+
+import com.jmc.commons.utils.helpers.regexp.RegExpHelper;
 
 import java.security.SecureRandom;
 import java.util.Random;
 import java.util.regex.Pattern;
 
 /**
+ * This class consists of static utility for generate password
+ *
  * @author Jeremy MARTIN CATANI
  * @created 07/10/2021
  */
@@ -23,6 +27,17 @@ public final class PasswordGeneratorHelper {
 
 	private PasswordGeneratorHelper() {}
 
+	/**
+	 * Password generator
+	 *
+	 * @param passwordLength length of the generated password
+	 * <p>
+	 * if passwordLength < MIN_PASSWORD_LENGTH ? passwordLength = MIN_PASSWORD_LENGTH
+	 * if passwordLength > MAX_PASSWORD_LENGTH ? passwordLength = MAX_PASSWORD_LENGTH
+	 * </p>
+	 *
+	 * @return generated password
+	 */
 	public static String generate(final int passwordLength) {
 		int length = passwordLength;
 		if (length < MIN_PASSWORD_LENGTH) {
