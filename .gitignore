@@ -7,3 +7,4 @@
 */src/test/resources
 /configuration/environment/*
 !/configuration/environment/test
+*/out
