@@ -1,4 +1,4 @@
-package com.jmc.commons.utils.helpers;
+package com.jmc.commons.utils.helpers.date;
 
 import com.jmc.commons.utils.AbstractFinalClassHelperTest;
 import org.junit.jupiter.api.Order;
