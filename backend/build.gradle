@@ -1,0 +1,44 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects { subproject ->
+
+    if (subproject.name != "core" && subproject.name != "api") {
+
+        apply plugin: "idea"
+        apply plugin: "java-library"
+
+        group "com.jmc"
+
+        sourceCompatibility = 16
+
+        compileJava.options.encoding = "UTF-8"
+        compileTestJava.options.encoding = "UTF-8"
+
+        ext {
+            commonsCollections4Version = "4.4"
+            commonsTextVersion = "1.9"
+            hibernateValidator = "7.0.1.Final"
+            jacksonAnnotationsVersion = "2.13.0"
+            jacksonDataBindVersion = "2.13.0"
+            jakartaElVersion = "4.0.2"
+            jakartaPersistenceApiVersion = "3.0.0"
+            jakartaValidationApiVersion = "3.0.0"
+            jsr305Version = "3.0.2"
+            junitJupiterApiVersion = "5.8.1"
+            junitJupiterEngineVersion = "5.8.1"
+            junitVintageEngineVersion = "5.8.1"
+            logbackClassicVersion = "1.2.6"
+            postgresqlVersion = "42.3.0"
+            powermockApiMockitoVersion = "2.0.9"
+            powermockModuleJunit4RuleAgentVersion = "2.0.9"
+            powermockModuleJunit4Version = "2.0.9"
+            springBootVersion = "2.5.6"
+            springVersion = "5.3.12"
+            tomcatEmbedVersion = "10.0.12"
+        }
+    }
+}

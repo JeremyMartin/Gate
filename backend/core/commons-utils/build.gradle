@@ -1,0 +1,19 @@
+version "0.1.0"
+
+dependencies {
+    api(project(":core:commons-utils-logger"))
+    api("com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotationsVersion}")
+    api("com.google.code.findbugs:jsr305:${jsr305Version}")
+    api("org.apache.commons:commons-collections4:${commonsCollections4Version}")
+    api("org.apache.commons:commons-text:${commonsTextVersion}")
+    api("org.hibernate.validator:hibernate-validator:${hibernateValidator}")
+    api("org.glassfish:jakarta.el:${jakartaElVersion}")
+    api("org.springframework:spring-beans:${springVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterApiVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitJupiterEngineVersion}")
+    testImplementation(project(":core:commons-utils-test").sourceSets.test.output)
+}
+
+test {
+    useJUnitPlatform()
+}

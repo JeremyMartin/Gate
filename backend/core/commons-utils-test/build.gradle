@@ -1,0 +1,16 @@
+version "0.1.0"
+
+dependencies {
+    api(project(":core:commons-utils-logger"))
+    testImplementation("org.apache.commons:commons-collections4:${commonsCollections4Version}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterApiVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitJupiterEngineVersion}")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${junitVintageEngineVersion}")
+    testImplementation("org.powermock:powermock-api-mockito2:${powermockApiMockitoVersion}")
+    testImplementation("org.powermock:powermock-module-junit4-rule-agent:${powermockModuleJunit4RuleAgentVersion}")
+    testImplementation("org.powermock:powermock-module-junit4:${powermockModuleJunit4Version}")
+}
+
+test {
+    useJUnitPlatform()
+}
