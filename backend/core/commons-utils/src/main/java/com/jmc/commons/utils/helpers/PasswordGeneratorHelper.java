@@ -54,4 +54,7 @@ public final class PasswordGeneratorHelper {
 		return generatedPassword;
 	}
 
+	private PasswordGeneratorHelper() {
+	}
+
 }
