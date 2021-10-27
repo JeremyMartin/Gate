@@ -3,7 +3,7 @@
 	<statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
 	<contextName>Test</contextName>
 	<conversionRule conversionWord="custom"
-					converterClass="com.jmc.commons.utils.logs.LogbackCustomColor"/>
+					converterClass="com.jmc.commons.utils.logger.LogbackCustomColor"/>
 	<appender name="CONSOLE"
 			  class="ch.qos.logback.core.ConsoleAppender">
 		<encoder charset="UTF-8">
@@ -16,7 +16,9 @@
 			level="OFF"/>
 	<logger name="org.hibernate"
 			level="OFF"/>
-	<root level="DEBUG">
+	<logger name="org.springframework"
+			level="DEBUG"/>
+	<root level="TRACE">
 		<appender-ref ref="CONSOLE"/>
 	</root>
 </configuration>
