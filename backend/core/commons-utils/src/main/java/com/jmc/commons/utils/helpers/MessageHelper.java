@@ -15,6 +15,12 @@ public final class MessageHelper {
 	public static final String ID_TO_LONG = "idToLong";
 	public static final String NAME_MANDATORY = "nameMandatory";
 	public static final String NAME_TO_LONG = "nameToLong";
+	public static final String NOT_VALID = "notValid";
+	public static final String RESOURCE_INCOMPATIBLE = "incompatible";
+	public static final String RESOURCE_NECESSARY = "necessary";
+	public static final String RESOURCE_NOT_EDITABLE = "notEditable";
+	public static final String RESOURCE_NOT_FOUND = "notFound";
+	public static final String URL_NOT_FOUND = "urlNotFound";
 
 	private MessageHelper() {
 	}
