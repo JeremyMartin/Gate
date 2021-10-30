@@ -1,0 +1,19 @@
+version "0.1.0"
+
+dependencies {
+    api("org.apache.tomcat.embed:tomcat-embed-core:${tomcatEmbedVersion}")
+    api("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
+    api("org.springframework:spring-webmvc:${springVersion}")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.11.4")
+    implementation(project(":core:commons-utils"))
+    testImplementation(project(":core:commons-utils-test").sourceSets.test.output)
+    testImplementation("org.mockito:mockito-junit-jupiter:${mockitoJunitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterApiVersion}")
+    testImplementation("org.powermock:powermock-api-mockito2:${powermockApiMockitoVersion}")
+    testImplementation("org.powermock:powermock-module-junit4-rule-agent:${powermockModuleJunit4RuleAgentVersion}")
+    testImplementation("org.powermock:powermock-module-junit4:${powermockModuleJunit4Version}")
+    testImplementation("org.springframework.boot:spring-boot-test-autoconfigure:${springBootVersion}")
+    testImplementation("org.springframework:spring-test:${springVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitJupiterEngineVersion}")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:${junitVintageEngineVersion}")
+}

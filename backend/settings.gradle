@@ -5,4 +5,6 @@ include 'core:commons-utils-test'
 findProject(':core:commons-utils-test')?.name = 'commons-utils-test'
 include 'core:commons-utils'
 findProject(':core:commons-utils')?.name = 'commons-utils'
+include 'core:commons-web'
+findProject(':core:commons-web')?.name = 'commons-web'
 
