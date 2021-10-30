@@ -16,8 +16,12 @@
 			level="OFF"/>
 	<logger name="org.hibernate"
 			level="OFF"/>
+	<logger name="org.apache"
+			level="OFF"/>
+	<logger name="_org"
+			level="OFF"/>
 	<logger name="org.springframework"
-			level="DEBUG"/>
+			level="ERROR"/>
 	<root level="TRACE">
 		<appender-ref ref="CONSOLE"/>
 	</root>
