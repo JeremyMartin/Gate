@@ -31,14 +31,28 @@ subprojects { subproject ->
             junitJupiterApiVersion = "5.8.1"
             junitJupiterEngineVersion = "5.8.1"
             junitVintageEngineVersion = "5.8.1"
+            log4jToSlf4jVersion = "2.14.1"
             logbackClassicVersion = "1.2.6"
+            mockitoJunitJupiterVersion = "4.0.0"
             postgresqlVersion = "42.3.0"
             powermockApiMockitoVersion = "2.0.9"
             powermockModuleJunit4RuleAgentVersion = "2.0.9"
             powermockModuleJunit4Version = "2.0.9"
             springBootVersion = "2.5.6"
             springVersion = "5.3.12"
-            tomcatEmbedVersion = "10.0.12"
+            tomcatEmbedVersion = "9.0.43"
+        }
+
+        test {
+            useJUnitPlatform()
+            jvmArgs "-Xshare:off"
+            jvmArgs += [
+                "--add-opens", "java.base/java.io=ALL-UNNAMED",
+                "--add-opens", "java.base/java.time=ALL-UNNAMED"
+            ]
+            reports {
+                false
+            }
         }
     }
 }

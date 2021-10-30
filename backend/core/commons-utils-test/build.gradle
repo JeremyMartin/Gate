@@ -10,7 +10,3 @@ dependencies {
     testImplementation("org.powermock:powermock-module-junit4-rule-agent:${powermockModuleJunit4RuleAgentVersion}")
     testImplementation("org.powermock:powermock-module-junit4:${powermockModuleJunit4Version}")
 }
-
-test {
-    useJUnitPlatform()
-}
