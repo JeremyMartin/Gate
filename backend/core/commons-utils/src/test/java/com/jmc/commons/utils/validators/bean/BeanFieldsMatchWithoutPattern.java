@@ -7,23 +7,22 @@ import com.jmc.commons.utils.validators.contraints.FieldsMatch;
  * created on 27/10/2021
  */
 @FieldsMatch(field = "first",
-			 fieldMatch = "second",
-			 pattern = "\\w+")
-public class BeanFieldsMatch {
+			 fieldMatch = "second")
+public class BeanFieldsMatchWithoutPattern {
 
 	private String first;
 	private String second;
 
-	public BeanFieldsMatch() {
+	public BeanFieldsMatchWithoutPattern() {
 		super();
 	}
 
-	public BeanFieldsMatch(final String first) {
+	public BeanFieldsMatchWithoutPattern(final String first) {
 		super();
 		this.first = first;
 	}
 
-	public BeanFieldsMatch(final String first, final String second) {
+	public BeanFieldsMatchWithoutPattern(final String first, final String second) {
 		super();
 		this.first = first;
 		this.second = second;

@@ -66,7 +66,7 @@ public class DateHelperTest extends AbstractFinalClassTest {
 		diff = DateHelper.calculateDifference(ChronoUnit.DAYS, dateStart, dateEnd);
 		assertEquals(1, diff, "Diff must be equals");
 		diff = DateHelper.calculateDifference(ChronoUnit.HOURS, dateStart, dateEnd);
-		assertEquals(24, diff, "Diff must be equals");
+		assertEquals(25, diff, "Diff must be equals");
 		LocalDateTime localDateTimeStart = LocalDateTime.now();
 		LocalDateTime localDateTimeEnd = LocalDateTime.now();
 		diff = DateHelper.calculateDifference(ChronoUnit.DAYS, localDateTimeStart, localDateTimeEnd);
